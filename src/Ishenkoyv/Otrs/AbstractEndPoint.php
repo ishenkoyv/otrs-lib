@@ -31,6 +31,11 @@ abstract class AbstractEndPoint
         return $this->objectName;
     }
 
+    public function getClient()
+    {
+        return $this->client;
+    }
+
     protected function callClient($method, array $params = array())
     {
         $endpoint = array($this->getObjectName() => $method);

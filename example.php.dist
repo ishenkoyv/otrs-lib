@@ -1,0 +1,14 @@
+<?php
+
+require 'vendor/autoload.php';
+
+use Ishenkoyv\Otrs\Client\Soap as Client;
+use Ishenkoyv\Otrs\EndPoint\Ticket as Ticket;
+
+$client = new Client('http://example.com/otrs/rpc.pl', 'otrs_soap', 'password');
+$ticket = new Ticket($client);
+$ticketId = 1363;
+$userId = 1;
+$ticketInfo = $ticket->ticketGet($ticketId, $userId, true);
+
+$lastResponse = $ticket->getClient()->getLastResponse();

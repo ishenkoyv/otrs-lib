@@ -16,4 +16,8 @@ namespace Ishenkoyv\Otrs;
 interface ClientInterface
 {
     public function dispatchCall(array $params = array());
+
+    public function getLastRequest();
+
+    public function getLastResponse();
 }

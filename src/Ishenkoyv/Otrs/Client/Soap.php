@@ -69,4 +69,14 @@ class Soap extends AbstractClient implements ClientInterface
         
         return $result;
     }
+
+    public function getLastRequest()
+    {
+        return $this->client->__getLastRequest();
+    }
+
+    public function getLastResponse()
+    {
+        return $this->client->__getLastResponse();
+    }
 }
